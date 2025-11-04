@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Click Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mouse Click Tracker</h1>
+        <p>Click anywhere on the page to count your clicks!</p>
+        <p>Mouse Clicks: <span id="click-count">0</span></p>
+        <button class="button" onclick="resetCounter()">Reset Counter</button>
+    </div>
+
+    <script>
+        let clickCount = 0;
+
+        // Function to update the click count
+        function updateClickCount() {
+            clickCount++;
+            document.getElementById('click-count').textContent = clickCount;
+        }
+
+        // Event listener to detect mouse clicks
+        document.body.addEventListener('click', updateClickCount);
+
+        // Reset the counter when the button is clicked
+        function resetCounter() {
+            clickCount = 0;
+            document.getElementById('click-count').textContent = clickCount;
+        }
+    </script>
+</body>
+</html>
